@@ -11,6 +11,8 @@ public class astroid : MonoBehaviour
     public GameObject astroids;
     public Transform astroidP;
     public GameObject megumin;
+
+    private bool isHit = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,12 +33,14 @@ public class astroid : MonoBehaviour
 
         if (collision.gameObject.tag == "bullet")
         {
-            if (astroids != null)
+            if (astroids != null && !isHit)
             {
+                isHit = true;
                 for (int i = 0; i < 2; i++)
                 {
                     Instantiate(astroids, astroidP.transform.position, Quaternion.identity);
                 }
+                StartCoroutine(HitCooldown());
             }
             GameObject meguMegu = Instantiate(megumin, astroidP.transform.position, Quaternion.identity);
             Destroy(meguMegu, 2f);
@@ -115,5 +119,10 @@ public class astroid : MonoBehaviour
             GameObject.Find("gameManager").GetComponent<gameManager>().SplitAstroids(current);
         }
         Destroy(gameObject);
+    }
+    IEnumerator HitCooldown()
+    {
+        yield return new WaitForSeconds(0.1f);
+        isHit = false;
     }
 }

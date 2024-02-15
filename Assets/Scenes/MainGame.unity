@@ -1133,7 +1133,7 @@ MonoBehaviour:
   fireDelay: 2
   burstDelay: 0.1
   burstSpreadAngle: 10
-  spreadAngle: 5
+  spreadAngle: 10
   explosionForce: 0
   explosionRadius: 0
   starterObj: {fileID: 3050140760520080684, guid: 2666ad9b3ea68064e849cfce4ab023a2,
@@ -1142,7 +1142,7 @@ MonoBehaviour:
     type: 3}
   burstObj: {fileID: 6258743120786426490, guid: 2c3075fb8ba3ba24599e59f07371c17b,
     type: 3}
-  bombObj: {fileID: 0}
+  bombObj: {fileID: 9002888938875944570, guid: 8574117df8b85a44b98798d6d591931b, type: 3}
   lazer: {fileID: 5416395635751924235, guid: c8e012a6f82f40049aa9d0096cc47b19, type: 3}
   lineRenderer: {fileID: 1188108528}
   attackPoint: {fileID: 1959592275}
@@ -1658,6 +1658,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.064
+      objectReference: {fileID: 0}
+    - target: {fileID: 3965203766964988117, guid: 4b2927bd88d8e3a48a7effb493f2e321,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4120033987751627289, guid: 4b2927bd88d8e3a48a7effb493f2e321,
         type: 3}

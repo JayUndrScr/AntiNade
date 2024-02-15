@@ -30,7 +30,7 @@ public class Artillery : MonoBehaviour
         starterObj.GetComponent<bullets>().speed = proSpeed;
         spreadObj.GetComponent<bullets>().speed = proSpeed;
         burstObj.GetComponent<bullets>().speed = proSpeed;
-        //bombObj.GetComponent<bullets>().speed = proSpeed;
+        bombObj.GetComponent<Explosion>().speed = proSpeed;
     }
 
     // Update is called once per frame
@@ -50,12 +50,17 @@ public class Artillery : MonoBehaviour
                 break;
 
             case State.Spread:
+                spreadObj.GetComponent<bullets>().speed = proSpeed - 1;
                 Projectile(spreadObj, -spreadAngle, false);
+                spreadObj.GetComponent<bullets>().speed = proSpeed;
                 Projectile(spreadObj, 0f, false);
+                spreadObj.GetComponent<bullets>().speed = proSpeed - 1;
                 Projectile(spreadObj, spreadAngle, true);
+                spreadObj.GetComponent<bullets>().speed = proSpeed;
                 break;
 
             case State.Bomb:
+                Projectile(bombObj, 0f, true);
                 break;
 
             case State.Starter:
