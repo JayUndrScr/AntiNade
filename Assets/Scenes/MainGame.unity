@@ -1128,14 +1128,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 148c364f6c9a91343b5c9257bb72c23d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _state: 0
+  _state: 3
   proSpeed: 20
   fireDelay: 2
   burstDelay: 0.1
   burstSpreadAngle: 10
-  spreadAngle: 10
-  explosionForce: 0
-  explosionRadius: 0
+  spreadAngle: 15
   starterObj: {fileID: 3050140760520080684, guid: 2666ad9b3ea68064e849cfce4ab023a2,
     type: 3}
   spreadObj: {fileID: 7167845877871166625, guid: 51427fbe1aba15b439117275911f0a2a,

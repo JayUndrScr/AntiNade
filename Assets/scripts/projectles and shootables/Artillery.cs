@@ -13,8 +13,7 @@ public class Artillery : MonoBehaviour
     public float burstDelay = .3f;
     public int burstSpreadAngle;
     public float spreadAngle = 5f;
-    public int explosionForce;
-    public int explosionRadius;
+
 
     [Header("Prefab")]
     public GameObject starterObj, spreadObj, burstObj, bombObj;
@@ -50,11 +49,11 @@ public class Artillery : MonoBehaviour
                 break;
 
             case State.Spread:
-                spreadObj.GetComponent<bullets>().speed = proSpeed - 1;
+                spreadObj.GetComponent<bullets>().speed = proSpeed - 3;
                 Projectile(spreadObj, -spreadAngle, false);
                 spreadObj.GetComponent<bullets>().speed = proSpeed;
                 Projectile(spreadObj, 0f, false);
-                spreadObj.GetComponent<bullets>().speed = proSpeed - 1;
+                spreadObj.GetComponent<bullets>().speed = proSpeed - 3;
                 Projectile(spreadObj, spreadAngle, true);
                 spreadObj.GetComponent<bullets>().speed = proSpeed;
                 break;

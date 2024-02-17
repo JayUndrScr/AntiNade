@@ -26,12 +26,12 @@ public class Explosion : MonoBehaviour
         {
             Destroy(gameObject);
             GameObject Kaboom = Instantiate(checkSphere, transform.position, transform.rotation);
-            Destroy(Kaboom, .1f);
+            Destroy(Kaboom, .03f);
         }
     }
     private void OnDestroy()
     {
         GameObject Kaboom = Instantiate(checkSphere, transform.position, transform.rotation);
-        Destroy(Kaboom, .1f);
+        Destroy(Kaboom, .03f);
     }
 }

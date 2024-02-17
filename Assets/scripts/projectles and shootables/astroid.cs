@@ -6,7 +6,6 @@ public class astroid : MonoBehaviour
 {
     public movement Movement;
 
-
     Rigidbody rb;
     public GameObject astroids;
     public Transform astroidP;
@@ -17,7 +16,6 @@ public class astroid : MonoBehaviour
     void Start()
     {
         Movement = FindAnyObjectByType<movement>();
-
         rb = GetComponent<Rigidbody>();
         rb.AddForce(new Vector3(Random.Range(100f, -100f), 0, Random.Range(100, -100)));
         rb.AddTorque(new Vector3(Random.Range(100f, -100f), 0, Random.Range(100, -100)));
