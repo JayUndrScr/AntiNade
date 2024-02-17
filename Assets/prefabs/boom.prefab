@@ -5018,6 +5018,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkSphere: {fileID: 312209561275386634, guid: c966ec97e4f464043b253d8f81a68e63,
     type: 3}
+  vfx: {fileID: 1650954120280797457, guid: 02e6c46bf6ec73840b3ea740a50565b4, type: 3}
   speed: 20
 --- !u!135 &4610790668131830073
 SphereCollider:
