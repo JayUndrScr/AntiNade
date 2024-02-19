@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Hud : MonoBehaviour
 {
+    public TextMeshProUGUI ammo;
     public Artillery weaponry;
     public Image weaponIcon;
+    public Slider weaponSlider;
     public Sprite[] icons;
     // Start is called before the first frame update
     void Start()
@@ -17,6 +20,9 @@ public class Hud : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ammo.text = weaponry.currentAmmo.ToString();
+        weaponSlider.value = weaponry.currentAmmo;
+        weaponSlider.maxValue = weaponry.maxAmmo;
         if(weaponry._state == State.Starter)
         {
             weaponIcon.sprite = icons[0];

@@ -14,6 +14,12 @@ public class Artillery : MonoBehaviour
     public int burstSpreadAngle;
     public float spreadAngle = 5f;
 
+    public int maxAmmo = 10;
+    public int currentAmmo = 10;
+    public bool isReloading  = false;
+    public float reloadTime = 2f;
+    public bool canReload = false;
+
 
     [Header("Prefab")]
     public GameObject starterObj, spreadObj, burstObj, bombObj;
@@ -55,9 +61,15 @@ public class Artillery : MonoBehaviour
         {
             _state = State.Rail;
         }
-        if (Input.GetKeyDown(KeyCode.Mouse0) && readyToFire == true)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && readyToFire == true && currentAmmo > 0)
         {
+            currentAmmo--;
             UWS();
+        }
+        if(currentAmmo == 0 && !isReloading)
+        {
+            isReloading = true;
+            Invoke(nameof(Reload), reloadTime);
         }
     }
     void UWS()
@@ -149,6 +161,11 @@ public class Artillery : MonoBehaviour
             }
         }
         Invoke(nameof(ResetShot), fireDelay);
+    }
+    public void Reload()
+    {
+        currentAmmo = maxAmmo;
+        isReloading = false;
     }
     IEnumerator ShootLaser()
     {
