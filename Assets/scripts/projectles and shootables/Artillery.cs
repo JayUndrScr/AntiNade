@@ -6,7 +6,7 @@ public enum State { Starter, Spread, Burst, Bomb, Rail}
 public class Artillery : MonoBehaviour
 {
     [SerializeField]
-    private State _state = State.Starter;
+    public State _state = State.Starter;
     bool readyToFire = true;
     public float proSpeed = 10f;
     public float fireDelay = 3f;
@@ -35,6 +35,26 @@ public class Artillery : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            _state = State.Starter;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            _state = State.Burst;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            _state = State.Spread;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            _state = State.Bomb;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            _state = State.Rail;
+        }
         if (Input.GetKeyDown(KeyCode.Mouse0) && readyToFire == true)
         {
             UWS();
